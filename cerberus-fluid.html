@@ -6,8 +6,9 @@
     <meta charset="utf-8"> <!-- utf-8 works for most cases -->
     <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
-    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
-    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="x-apple-disable-message-reformatting"> <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no">
+    <!-- Tell iOS not to automatically link certain text strings. -->
     <meta name="color-scheme" content="light">
     <meta name="supported-color-schemes" content="light">
     <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
@@ -16,12 +17,7 @@
     <!--[if gte mso 9]>
       <xml>
         <o:OfficeDocumentSettings>
-<<<<<<< HEAD
             <o:PixelsPerInch>96</o:PixelsPerInch>
-=======
-            <o:AllowPNG/>
-          <o:PixelsPerInch>96</o:PixelsPerInch>
->>>>>>> standard verein
         </o:OfficeDocumentSettings>
       </xml>
     <![endif]-->
@@ -57,7 +53,6 @@
 
     <!-- CSS Reset : BEGIN -->
     <style>
-
         /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
         :root {
             color-scheme: light;
@@ -86,7 +81,8 @@
         }
 
         /* What it does: forces Samsung Android mail clients to use the entire viewport */
-        #MessageViewBody, #MessageWebViewDiv{
+        #MessageViewBody,
+        #MessageWebViewDiv {
             width: 100% !important;
         }
 
@@ -107,7 +103,7 @@
 
         /* What it does: Uses a better rendering method when resizing images in IE. */
         img {
-            -ms-interpolation-mode:bicubic;
+            -ms-interpolation-mode: bicubic;
         }
 
         /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
@@ -116,7 +112,8 @@
         }
 
         /* What it does: A work-around for email clients meddling in triggered links. */
-        a[x-apple-data-detectors],  /* iOS */
+        a[x-apple-data-detectors],
+        /* iOS */
         .unstyle-auto-detected-links a,
         .aBn {
             border-bottom: 0 !important;
@@ -141,7 +138,7 @@
         }
 
         /* If the above doesn't work, add a .g-img class to any image in question. */
-        img.g-img + div {
+        img.g-img+div {
             display: none !important;
         }
 
@@ -150,36 +147,35 @@
 
         /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
         @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
-            u ~ div .email-container {
+            u~div .email-container {
                 min-width: 320px !important;
             }
         }
 
         /* iPhone 6, 6S, 7, 8, and X */
         @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
-            u ~ div .email-container {
+            u~div .email-container {
                 min-width: 375px !important;
             }
         }
 
         /* iPhone 6+, 7+, and 8+ */
         @media only screen and (min-device-width: 414px) {
-            u ~ div .email-container {
+            u~div .email-container {
                 min-width: 414px !important;
             }
         }
-
     </style>
     <!-- CSS Reset : END -->
 
     <!-- Progressive Enhancements : BEGIN -->
     <style>
-
         /* What it does: Hover styles for buttons */
         .button-td,
         .button-a {
             transition: all 100ms ease-in;
         }
+
         .button-td-primary:hover,
         .button-a-primary:hover {
             background: #555555 !important;
@@ -198,39 +194,46 @@
 
         /* Dark Mode Styles : BEGIN */
         @media (prefers-color-scheme: dark) {
-			.email-bg {
-				background: #111111 !important;
-			}
+            .email-bg {
+                background: #111111 !important;
+            }
+
             .darkmode-bg {
                 background: #222222 !important;
             }
-			h1,
-			h2,
-			h3,
-			p,
-			li,
-			.darkmode-text,
-			.email-container a:not([class]) {
-				color: #F7F7F9 !important;
-			}
-			td.button-td-primary,
-			td.button-td-primary a {
-				background: #ffffff !important;
-				border-color: #ffffff !important;
-				color: #222222 !important;
-			}
-			td.button-td-primary:hover,
-			td.button-td-primary a:hover {
-				background: #cccccc !important;
-				border-color: #cccccc !important;
-			}
-			.footer td {
-				color: #aaaaaa !important;
-			}
+
+            h1,
+            h2,
+            h3,
+            p,
+            li,
+            .darkmode-text,
+            .email-container a:not([class]) {
+                color: #F7F7F9 !important;
+            }
+
+            td.button-td-primary,
+            td.button-td-primary a {
+                background: #ffffff !important;
+                border-color: #ffffff !important;
+                color: #222222 !important;
+            }
+
+            td.button-td-primary:hover,
+            td.button-td-primary a:hover {
+                background: #cccccc !important;
+                border-color: #cccccc !important;
+            }
+
+            .footer td {
+                color: #aaaaaa !important;
+            }
+
             .darkmode-fullbleed-bg {
                 background-color: #0F3016 !important;
             }
-		}
+        }
+
         /* Dark Mode Styles : END */
     </style>
     <!-- Progressive Enhancements : END -->
@@ -242,31 +245,25 @@
 	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
 	3. mso conditional: For Windows 10 Mail
 -->
-<<<<<<< HEAD
-<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #222222;" class="email-bg">
-	<center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #222222;" class="email-bg">
-    <!--[if mso | IE]>
-    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #222222;" class="email-bg">
-=======
 
 <body width="100%" style="
       margin: 0;
       padding: 0 !important;
       mso-line-height-rule: exactly;
       background-color: #efece9;
-    ">
-    <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #efece9">
-        <!--[if mso | IE]>
-    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #EFECE9;">
->>>>>>> standard verein
+      class=" email-bg" ">
+    <center role=" article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #efece9"
+    class="email-bg">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #EFECE9;" class="email-bg">
     <tr>
     <td>
     <![endif]-->
 
 
-        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
-        <!-- Preview Text Spacing Hack : BEGIN -->
-        <div style="
+    <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+    <!-- Preview Text Spacing Hack : BEGIN -->
+    <div style="
           display: none;
           font-size: 1px;
           line-height: 1px;
@@ -277,62 +274,53 @@
           mso-hide: all;
           font-family: 'Open Sans', sans-serif;
         ">
-            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
-        </div>
-        <!-- Preview Text Spacing Hack : END -->
+        &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+    </div>
+    <!-- Preview Text Spacing Hack : END -->
 
-        <!--
+    <!--
             Set the email width. Defined in two places:
             1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 600px.
             2. MSO tags for Desktop Windows Outlook enforce a 600px width.
         -->
-        <div style="max-width: 600px; margin: 0 auto" class="email-container">
-            <!--[if mso]>
+    <div style="max-width: 600px; margin: 0 auto" class="email-container">
+        <!--[if mso]>
             <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600">
             <tr>
             <td>
             <![endif]-->
 
-            <!-- Email Body : BEGIN -->
-            <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%"
-                style="margin: auto">
-                <!-- Email Header : BEGIN -->
-                <tr>
-<<<<<<< HEAD
-                    <td style="background-color: #ffffff;" class="darkmode-bg">
-                        <img src="https://via.placeholder.com/1200x600" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block;" class="g-img">
-=======
-                    <td style="padding-bottom: 20px; text-align: center">
-                        <img src="./adonia_logo_gold_200.png" width="200" height="160" alt="alt_text" border="0" style="
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%"
+            style="margin: auto">
+            <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="padding-bottom: 20px; text-align: center" class="darkmode-bg">
+                    <img src="./adonia_logo_gold_200.png" width="200" height="160" alt="alt_text" border="0" style="
                   height: auto;
                   font-family: 'Open Sans', sans-serif;
                   font-size: 15px;
                   line-height: 15px;
                   color: #555555;
-                " />
->>>>>>> standard verein
-                    </td>
-                </tr>
-                <!-- Email Header : END -->
+                " class="g-img" />
+                </td>
+            </tr>
+            <!-- Email Header : END -->
 
-                <!-- 1 Column Text + Button : BEGIN -->
-                <tr>
-<<<<<<< HEAD
-                    <td style="background-color: #ffffff;" class="darkmode-bg">
-=======
-                    <td style="background-color: #ffffff">
->>>>>>> standard verein
-                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                            <tr>
-                                <td style="
+            <!-- 1 Column Text + Button : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;" class="darkmode-bg">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="
                       padding: 20px;
                       font-family: 'Open Sans', sans-serif;
                       font-size: 15px;
                       line-height: 20px;
                       color: #555555;
                     ">
-                                    <!-- Shopware: AB HIER E-MAIL CONTENT   || not really: watch Preheader above-->
-                                    <h1 style="
+                                <!-- Shopware: AB HIER E-MAIL CONTENT   || not really: watch Preheader above-->
+                                <h1 style="
                         margin: 0 0 10px 0;
                         font-family: Montserrat, sans-serif;
                         font-size: 25px;
@@ -341,28 +329,28 @@
                         font-weight: 700;
                         text-transform: uppercase;
                       ">
-                                        Eingangsbestätigung
-                                    </h1>
-                                    <p style="margin: 0">
-                                        Wörter aneinandergereiht, posuere leo id, eleifend
-                                        dolor. Class aptent taciti sociosqu ad litora torquent per
-                                        conubia nostra, per inceptos himenaeos. Praesent laoreet
-                                        malesuada cursus. Maecenas scelerisque congue eros eu
-                                        posuere. Praesent in felis ut velit pretium lobortis
-                                        rhoncus ut&nbsp;erat.
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 0 20px">
-                                    <!-- Button : BEGIN -->
-                                    <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0"
-                                        style="margin: auto">
-                                        <tr>
-                                            <td class="button-td button-td-primary"
-                                                style="border-radius: 4px; background: #00628B">
-                                                <a class="button-a button-a-primary" href="https://adonia.de/"
-                                                    target="_blank" style="
+                                    Eingangsbestätigung
+                                </h1>
+                                <p style="margin: 0">
+                                    Wörter aneinandergereiht, posuere leo id, eleifend
+                                    dolor. Class aptent taciti sociosqu ad litora torquent per
+                                    conubia nostra, per inceptos himenaeos. Praesent laoreet
+                                    malesuada cursus. Maecenas scelerisque congue eros eu
+                                    posuere. Praesent in felis ut velit pretium lobortis
+                                    rhoncus ut&nbsp;erat.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0 20px">
+                                <!-- Button : BEGIN -->
+                                <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0"
+                                    style="margin: auto">
+                                    <tr>
+                                        <td class="button-td button-td-primary"
+                                            style="border-radius: 4px; background: #00628B">
+                                            <a class="button-a button-a-primary" href="https://adonia.de/"
+                                                target="_blank" style="
                               background: #00628B;
                               border: none;
                               font-family: 'Open Sans', sans-serif;
@@ -374,21 +362,21 @@
                               display: block;
                               border-radius: 4px;
                             ">Ein Button</a>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <!-- Button : END -->
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- Button : END -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="
                       padding: 20px;
                       font-family: 'Open Sans', sans-serif;
                       font-size: 15px;
                       line-height: 20px;
                       color: #555555;
                     ">
-                                    <h2 style="
+                                <h2 style="
                         margin: 0 0 10px 0;
                         font-family: Open Sans, sans-serif;
                         font-size: 18px;
@@ -396,109 +384,51 @@
                         color: #333333;
                         font-weight: bold;
                       ">
-                                        Praesent in felis ut velit pretium lobortis rhoncus
-                                        ut&nbsp;erat.
-                                    </h2>
-                                    <ul style="
+                                    Praesent in felis ut velit pretium lobortis rhoncus
+                                    ut&nbsp;erat.
+                                </h2>
+                                <ul style="
                         padding: 0;
                         margin: 0 0 10px 0;
                         list-style-type: disc;
                       ">
-                                        <li style="margin: 0 0 10px 30px" class="list-item-first">
-                                            A list item.
-                                        </li>
-                                        <li style="margin: 0 0 10px 30px">
-                                            Another list item here.
-                                        </li>
-                                        <li style="margin: 0 0 0 30px" class="list-item-last">
-                                            Everyone gets a list item, list items for everyone!
-                                        </li>
-                                    </ul>
-                                    <p style="margin: 0">
-                                        Maecenas sed ante pellentesque, posuere leo id, eleifend
-                                        dolor. Class aptent taciti sociosqu ad litora torquent per
-                                        conubia nostra, per inceptos himenaeos. Praesent laoreet
-                                        malesuada cursus. Maecenas scelerisque congue eros eu
-                                        posuere. Praesent in felis ut velit pretium lobortis
-                                        rhoncus ut&nbsp;erat.
-                                    </p>
-                                    <!-- Shopware: AB HIER E-MAIL FOOTER-->
-                                </td>
-                            </tr>
+                                    <li style="margin: 0 0 10px 30px" class="list-item-first">
+                                        A list item.
+                                    </li>
+                                    <li style="margin: 0 0 10px 30px">
+                                        Another list item here.
+                                    </li>
+                                    <li style="margin: 0 0 0 30px" class="list-item-last">
+                                        Everyone gets a list item, list items for everyone!
+                                    </li>
+                                </ul>
+                                <p style="margin: 0">
+                                    Maecenas sed ante pellentesque, posuere leo id, eleifend
+                                    dolor. Class aptent taciti sociosqu ad litora torquent per
+                                    conubia nostra, per inceptos himenaeos. Praesent laoreet
+                                    malesuada cursus. Maecenas scelerisque congue eros eu
+                                    posuere. Praesent in felis ut velit pretium lobortis
+                                    rhoncus ut&nbsp;erat.
+                                </p>
+                                <!-- Shopware: AB HIER E-MAIL FOOTER-->
+                            </td>
+                        </tr>
 
-<<<<<<< HEAD
-                <!-- 2 Even Columns : BEGIN -->
-                <tr>
-                    <td style="padding: 0 10px 40px 10px; background-color: #ffffff;" class="darkmode-bg">
-                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                            <tr>
-                                <td valign="top" width="50%">
-                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                        <tr>
-                                            <td style="text-align: center; padding: 0 10px;">
-                                                <img src="https://via.placeholder.com/200" width="200" height="" alt="alt_text" border="0" style="width: 100%; max-width: 200px; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: left; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding: 10px 10px 0;">
-                                               <p style="margin: 0;">Maecenas sed ante pellentesque, posuere leo id, eleifend dolor.</p>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                                <td valign="top" width="50%">
-                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                        <tr>
-                                            <td style="text-align: center; padding: 0 10px;">
-                                                <img src="https://via.placeholder.com/200" width="200" height="" alt="alt_text" border="0" style="width: 100%; max-width: 200px; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: left; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding: 10px 10px 0;">
-                                                <p style="margin: 0;">Maecenas sed ante pellentesque, posuere leo id, eleifend dolor.</p>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-=======
->>>>>>> standard verein
-                        </table>
-                    </td>
-                </tr>
-                <!-- 1 Column Text + Button : END -->
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text + Button : END -->
 
-                <!-- Email Body : END -->
+            <!-- Email Body : END -->
 
-<<<<<<< HEAD
-                <!-- 1 Column Text : BEGIN -->
-                <tr>
-                    <td style="background-color: #ffffff;" class="darkmode-bg">
-                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                            <tr>
-                                <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
-                                    <p style="margin: 0;">Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent laoreet malesuada cursus. Maecenas scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut&nbsp;erat.</p>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <!-- 1 Column Text : END -->
-=======
->>>>>>> standard verein
 
-                <!-- Email Footer : BEGIN -->
-            </table>
+        </table>
 
-<<<<<<< HEAD
-            <!-- Email Footer : BEGIN -->
-	        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;" class="footer">
-=======
-            <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%"
-                style="margin: auto">
->>>>>>> standard verein
-                <tr>
-                    <td style="
+        <!-- Email Footer : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%"
+            style="margin: auto;" class="footer">
+            <tr>
+                <td style="
                 padding: 20px;
                 font-family: 'Open Sans', sans-serif;
                 font-size: 12px;
@@ -506,70 +436,39 @@
                 text-align: center;
                 color: #333333;
               ">
-                        <!-- <webversion style="
+                    <!-- <webversion style="
                   color: #333333;
                   text-decoration: underline;
                   font-weight: bold;
                 ">Webversion ansehen</webversion>
             <br /><br /> -->
-                        Adonia e.V.<br /><span class="unstyle-auto-detected-links">Windelbachstr. 9, 76228
-                            Karlsruhe<br /><a style="color: #333333;" href="tel:+497215600991">+49 721 5600
-                                991</a><br />
-                            <a style="color: #333333; text-decoration: underline"
-                                href="https://www.adonia.de/">www.adonia.de</a><br />
-                            <a style="color: #333333; text-decoration: underline"
-                                href="mailto:info@adonia.de">info@adonia.de</a></span>
-                        <br /><br />
+                    Adonia e.V.<br /><span class="unstyle-auto-detected-links">Windelbachstr. 9, 76228
+                        Karlsruhe<br /><a style="color: #333333;" href="tel:+497215600991">+49 721 5600
+                            991</a><br />
+                        <a style="color: #333333; text-decoration: underline"
+                            href="https://www.adonia.de/">www.adonia.de</a><br />
+                        <a style="color: #333333; text-decoration: underline"
+                            href="mailto:info@adonia.de">info@adonia.de</a></span>
+                    <br /><br />
 
-                    </td>
-                </tr>
-            </table>
-            <!-- Email Footer : END -->
+                </td>
+            </tr>
+        </table>
+        <!-- Email Footer : END -->
 
-            <!--[if mso]>
+        <!--[if mso]>
             </td>
             </tr>
             </table>
             <![endif]-->
-        </div>
-
-<<<<<<< HEAD
-        <!-- Full Bleed Background Section : BEGIN -->
-        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #709f2b;" class="darkmode-fullbleed-bg">
-            <tr>
-                <td>
-                    <div align="center" style="max-width: 600px; margin: auto;" class="email-container">
-                        <!--[if mso]>
-                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
-                        <tr>
-                        <td>
-                        <![endif]-->
-                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                            <tr>
-                                <td style="padding: 20px; text-align: left; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
-                                    <p style="margin: 0;">Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent laoreet malesuada cursus. Maecenas scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut&nbsp;erat.</p>
-                                </td>
-                            </tr>
-                        </table>
-                        <!--[if mso]>
-                        </td>
-                        </tr>
-                        </table>
-                        <![endif]-->
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <!-- Full Bleed Background Section : END -->
+    </div>
 
     <!--[if mso | IE]>
-=======
-        <!--[if mso | IE]>
->>>>>>> standard verein
     </td>
     </tr>
     </table>
     <![endif]-->
     </center>
 </body>
+
 </html>
