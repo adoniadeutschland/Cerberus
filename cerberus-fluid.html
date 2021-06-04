@@ -6,8 +6,9 @@
     <meta charset="utf-8"> <!-- utf-8 works for most cases -->
     <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
-    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
-    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="x-apple-disable-message-reformatting"> <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no">
+    <!-- Tell iOS not to automatically link certain text strings. -->
     <meta name="color-scheme" content="light">
     <meta name="supported-color-schemes" content="light">
     <title></title> <!--   The title tag shows in email notifications, like Android 4.4. -->
@@ -53,7 +54,6 @@
 
     <!-- CSS Reset : BEGIN -->
     <style>
-
         /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
         :root {
             color-scheme: light;
@@ -82,7 +82,8 @@
         }
 
         /* What it does: forces Samsung Android mail clients to use the entire viewport */
-        #MessageViewBody, #MessageWebViewDiv{
+        #MessageViewBody,
+        #MessageWebViewDiv {
             width: 100% !important;
         }
 
@@ -103,7 +104,7 @@
 
         /* What it does: Uses a better rendering method when resizing images in IE. */
         img {
-            -ms-interpolation-mode:bicubic;
+            -ms-interpolation-mode: bicubic;
         }
 
         /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
@@ -112,7 +113,8 @@
         }
 
         /* What it does: A work-around for email clients meddling in triggered links. */
-        a[x-apple-data-detectors],  /* iOS */
+        a[x-apple-data-detectors],
+        /* iOS */
         .unstyle-auto-detected-links a,
         .aBn {
             border-bottom: 0 !important;
@@ -137,7 +139,7 @@
         }
 
         /* If the above doesn't work, add a .g-img class to any image in question. */
-        img.g-img + div {
+        img.g-img+div {
             display: none !important;
         }
 
@@ -146,36 +148,35 @@
 
         /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
         @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
-            u ~ div .email-container {
+            u~div .email-container {
                 min-width: 320px !important;
             }
         }
 
         /* iPhone 6, 6S, 7, 8, and X */
         @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
-            u ~ div .email-container {
+            u~div .email-container {
                 min-width: 375px !important;
             }
         }
 
         /* iPhone 6+, 7+, and 8+ */
         @media only screen and (min-device-width: 414px) {
-            u ~ div .email-container {
+            u~div .email-container {
                 min-width: 414px !important;
             }
         }
-
     </style>
     <!-- CSS Reset : END -->
 
     <!-- Progressive Enhancements : BEGIN -->
     <style>
-
         /* What it does: Hover styles for buttons */
         .button-td,
         .button-a {
             transition: all 100ms ease-in;
         }
+
         .button-td-primary:hover,
         .button-a-primary:hover {
             background: #555555 !important;
@@ -191,7 +192,6 @@
             }
 
         }
-
     </style>
     <!-- Progressive Enhancements : END -->
 
@@ -275,7 +275,6 @@
                       line-height: 20px;
                       color: #555555;
                     ">
-                                    <!-- Shopware: AB HIER E-MAIL CONTENT   || not really: watch Preheader above-->
                                     <h1 style="
                         margin: 0 0 10px 0;
                         font-family: Montserrat, sans-serif;
@@ -288,12 +287,13 @@
                                         Eingangsbestätigung
                                     </h1>
                                     <p style="margin: 0">
-                                        Wörter aneinandergereiht, posuere leo id, eleifend
-                                        dolor. Class aptent taciti sociosqu ad litora torquent per
-                                        conubia nostra, per inceptos himenaeos. Praesent laoreet
-                                        malesuada cursus. Maecenas scelerisque congue eros eu
-                                        posuere. Praesent in felis ut velit pretium lobortis
-                                        rhoncus ut&nbsp;erat.
+                                        wir freuen uns Ihnen mitteilen zu können, dass die Anmeldung: {{Buchungsnummer}}
+                                        erfolgreich an uns übermittelt wurde und nun bearbeitet wird.
+                                    </p>
+                                    <p style="margin: 0">
+                                        Bitte beachten Sie: Die Anmeldung ist nur gültig, wenn der Zahlungsvorgang
+                                        vollständig abgeschlossen wurde. Wenn Sie den Zahlungsvorgang noch nicht
+                                        abgeschlossen haben, könnnen Sie das unter folgendem Link tun:
                                     </p>
                                 </td>
                             </tr>
@@ -305,7 +305,8 @@
                                         <tr>
                                             <td class="button-td button-td-primary"
                                                 style="border-radius: 4px; background: #00628B">
-                                                <a class="button-a button-a-primary" href="https://adonia.de/"
+
+                                                <a class="button-a button-a-primary" href="{{Payone-Link}}"
                                                     target="_blank" style="
                               background: #00628B;
                               border: none;
@@ -317,11 +318,80 @@
                               color: #ffffff;
                               display: block;
                               border-radius: 4px;
-                            ">Ein Button</a>
+                            ">Bezahl-Link</a>
                                             </td>
                                         </tr>
                                     </table>
                                     <!-- Button : END -->
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="
+                      padding: 20px;
+                      font-family: 'Open Sans', sans-serif;
+                      font-size: 15px;
+                      line-height: 20px;
+                      color: #555555;
+                    ">
+                                    <p style="margin: 0">
+                                        Den Zahlungsstatus und weitere Daten sehen Sie
+                                        in ihren Buchungen.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0 20px">
+                                    <!-- Button : BEGIN -->
+                                    <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0"
+                                        style="margin: auto">
+                                        <tr>
+                                            <td class="button-td button-td-primary"
+                                                style="border-radius: 4px; background: #00628B">
+
+                                                <a class="button-a button-a-primary" href="{{Link zu Buchungen}}"
+                                                    target="_blank" style="
+                              background: #00628B;
+                              border: none;
+                              font-family: 'Open Sans', sans-serif;
+                              font-size: 15px;
+                              line-height: 15px;
+                              text-decoration: none;
+                              padding: 13px 17px;
+                              color: #ffffff;
+                              display: block;
+                              border-radius: 4px;
+                            ">Meine Buchungen</a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- Button : END -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="
+                      padding: 20px;
+                      font-family: 'Open Sans', sans-serif;
+                      font-size: 15px;
+                      line-height: 20px;
+                      color: #555555;
+                    ">
+                                    {# TEXTBAUSTEIN 1 BEGIN #}
+                                    <h2 style="
+                        margin: 0 0 10px 0;
+                        font-family: Open Sans, sans-serif;
+                        font-size: 18px;
+                        line-height: 22px;
+                        color: #333333;
+                        font-weight: bold;
+                      ">
+                                        Bei Campanmeldung mit Anmeldegebühr:
+                                    </h2>
+                                    <p style="margin: 0">
+                                        Neun Monate vor dem Camp werden die offizielle Anmeldebestätigung und weitere
+                                        Teilnehmer-Informationen versendet.
+                                    </p>
+                                    {# TEXTBAUSTEIN 1 END #}
                                 </td>
                             </tr>
                             <tr>
@@ -340,33 +410,29 @@
                         color: #333333;
                         font-weight: bold;
                       ">
-                                        Praesent in felis ut velit pretium lobortis rhoncus
-                                        ut&nbsp;erat.
+                                        Die von Ihnen übertragenen Daten:
                                     </h2>
-                                    <ul style="
-                        padding: 0;
-                        margin: 0 0 10px 0;
-                        list-style-type: disc;
-                      ">
-                                        <li style="margin: 0 0 10px 30px" class="list-item-first">
-                                            A list item.
-                                        </li>
-                                        <li style="margin: 0 0 10px 30px">
-                                            Another list item here.
-                                        </li>
-                                        <li style="margin: 0 0 0 30px" class="list-item-last">
-                                            Everyone gets a list item, list items for everyone!
-                                        </li>
-                                    </ul>
                                     <p style="margin: 0">
-                                        Maecenas sed ante pellentesque, posuere leo id, eleifend
-                                        dolor. Class aptent taciti sociosqu ad litora torquent per
-                                        conubia nostra, per inceptos himenaeos. Praesent laoreet
-                                        malesuada cursus. Maecenas scelerisque congue eros eu
-                                        posuere. Praesent in felis ut velit pretium lobortis
-                                        rhoncus ut&nbsp;erat.
+                                    <h5>{{eventName}} {{eventShorthand}}</h5>
+                                    {{eventdate}}</br>
+                                    {{participantFirstname}}</br>
+                                    {{participantLastname}}</br>
+                                    {{participantBirthdate}}</br>
+                                    {{alternativeEvent}}
                                     </p>
-                                    <!-- Shopware: AB HIER E-MAIL FOOTER-->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="
+                      padding: 20px;
+                      font-family: 'Open Sans', sans-serif;
+                      font-size: 15px;
+                      line-height: 20px;
+                      color: #555555;
+                    ">
+                                    <p style="margin: 0">
+                                    </p>Vielen Dank,</br>
+                                    Ihr Adonia-Team
                                 </td>
                             </tr>
 
@@ -426,4 +492,5 @@
     <![endif]-->
     </center>
 </body>
+
 </html>
