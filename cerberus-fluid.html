@@ -104,6 +104,10 @@
             margin: 0 auto !important;
         }
 
+        .email-container table td {
+            padding: 0.5em;
+        }
+
         /* What it does: Uses a better rendering method when resizing images in IE. */
         img {
             -ms-interpolation-mode: bicubic;
@@ -210,6 +214,7 @@
             h3,
             p,
             li,
+            td,
             .darkmode-text,
             .email-container a:not([class]) {
                 color: #F7F7F9 !important;
@@ -226,6 +231,16 @@
             td.button-td-primary a:hover {
                 background: #cccccc !important;
                 border-color: #cccccc !important;
+            }
+
+            .email-container table.content tr.tablehead td {
+                background-color: #414141;
+            }
+
+            .email-container table.content td {
+                background-color: #222222;
+                border-bottom: 1px solid #cccccc !important;
+                border-top: 1px solid #cccccc !important;
             }
 
             .footer td {
@@ -367,9 +382,9 @@
                       color: #555555;
                     ">
                                     Informationen zu Ihrer Bestellung:</strong><br><br>
-                                    <table border="0"
+                                    <table border="0" class="content"
                                         style="font-family:Arial, Helvetica, sans-serif; font-size:12px; margin: 0 !important;">
-                                        <tr>
+                                        <tr class="tablehead">
                                             <td bgcolor="#F7F7F2" style="border-bottom:1px solid #cccccc;">
                                                 <strong>Produkt-Nr.</strong>
                                             </td>
@@ -399,7 +414,7 @@
                                     </table>
                                     </p>
                                     <p>Hier bekommen Sie Zugriff auf ihre gekauften digitalen
-                                        Produkte:https://dev-shop.adonia.de/account/resources</p>
+                                        Produkte:</p>
                                     </p>
                                 </td>
                             </tr>
@@ -411,8 +426,9 @@
                                         <tr>
                                             <td class="button-td button-td-primary"
                                                 style="border-radius: 4px; background: #00628B">
-                                                <a class="button-a button-a-primary" href="https://adonia.de/"
-                                                    target="_blank" style="
+                                                <a class="button-a button-a-primary"
+                                                    href="https://dev-shop.adonia.de/account/resources" target="_blank"
+                                                    style="
                               background: #00628B;
                               border: none;
                               font-family: 'Open Sans', sans-serif;
@@ -423,7 +439,7 @@
                               color: #ffffff;
                               display: block;
                               border-radius: 4px;
-                            ">Ein Button</a>
+                            ">Zu Downloads</a>
                                             </td>
                                         </tr>
                                     </table>
